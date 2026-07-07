@@ -137,8 +137,11 @@ section[id],header[id]{scroll-margin-top:84px}
 .card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:26px 24px;backdrop-filter:blur(12px);transition:.3s}
 .card:hover{transform:translateY(-4px);border-color:rgba(255,46,63,.4);box-shadow:0 18px 50px rgba(255,46,63,.14)}
 .card .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(255,46,63,.13);border:1px solid rgba(255,46,63,.3);color:var(--red);margin-bottom:16px}
+.card .card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .card h3{font-size:19px;font-weight:600}
 .card p{margin-top:9px;color:var(--muted);font-size:14.5px}
+.card.soon{opacity:.72}
+.soon-badge{flex:none;display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);background:rgba(255,46,63,.1);border:1px solid rgba(255,46,63,.28);padding:4px 10px;border-radius:999px;margin-top:2px}
 
 /* tracks */
 .tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
@@ -156,6 +159,18 @@ section[id],header[id]{scroll-margin-top:84px}
 .track-card .for b{color:var(--ink);font-weight:600}
 .track-card .tk-cta{margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--red);transition:.2s}
 .track-card .tk-cta:hover{filter:brightness(1.25)}
+
+/* curriculum */
+.curriculum{display:flex;flex-direction:column}
+.curr-item{display:flex;gap:24px;align-items:flex-start;padding:24px 6px;border-bottom:1px solid var(--line);transition:.25s}
+.curr-item:last-child{border-bottom:none}
+.curr-item:hover{background:rgba(255,255,255,.03)}
+.curr-num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#fff;box-shadow:0 8px 22px var(--glow)}
+.curr-body{flex:1;display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:8px 28px;align-items:baseline}
+.curr-body h3{font-size:19px;font-weight:600}
+.curr-body p{color:var(--muted);font-size:14.5px}
+@media(max-width:760px){.curr-body{grid-template-columns:1fr;gap:6px}}
+[dir="rtl"] .curr-item{flex-direction:row-reverse}
 
 .day-tag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);background:rgba(255,46,63,.1);border:1px solid rgba(255,46,63,.28);padding:5px 13px;border-radius:999px}
 
@@ -286,14 +301,20 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);margin-top:4
       <h3 class="t" data-en="Workshops" data-ar="ورش عمل">Workshops</h3>
       <p class="t" data-en="Hands-on intensives of one to two days where you leave with a finished piece — like Mastering AI Video Generation 101." data-ar="ورش مكثّفة من يوم إلى يومين تخرج منها بعملٍ مكتمل — مثل ورشة «إتقان توليد الفيديو بالذكاء الاصطناعي 101».">Hands-on intensives of one to two days where you leave with a finished piece — like Mastering AI Video Generation 101.</p>
     </div>
-    <div class="card">
+    <div class="card soon">
       <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
-      <h3 class="t" data-en="Courses" data-ar="كورسات">Courses</h3>
+      <div class="card-head">
+        <h3 class="t" data-en="Courses" data-ar="كورسات">Courses</h3>
+        <span class="soon-badge t" data-en="Coming soon" data-ar="قريباً">Coming soon</span>
+      </div>
       <p class="t" data-en="Multi-session programs that build a discipline from the ground up — from cinematography to podcast hosting." data-ar="برامج متعدّدة الجلسات تبني التخصّص من الأساس — من التصوير السينمائي إلى تقديم البودكاست.">Multi-session programs that build a discipline from the ground up — from cinematography to podcast hosting.</p>
     </div>
-    <div class="card">
+    <div class="card soon">
       <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></div>
-      <h3 class="t" data-en="Talks" data-ar="جلسات حوارية">Talks</h3>
+      <div class="card-head">
+        <h3 class="t" data-en="Talks" data-ar="جلسات حوارية">Talks</h3>
+        <span class="soon-badge t" data-en="Coming soon" data-ar="قريباً">Coming soon</span>
+      </div>
       <p class="t" data-en="Open sessions and panels with working directors, editors and producers from across the network." data-ar="جلسات مفتوحة وحلقات نقاش مع مخرجين ومونتيرين ومنتجين يعملون فعلاً ضمن الشبكة.">Open sessions and panels with working directors, editors and producers from across the network.</p>
     </div>
   </div>
@@ -302,52 +323,50 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);margin-top:4
 <!-- TRACKS -->
 <section class="sec wrap" id="tracks">
   <div class="sec-head">
-    <span class="eyebrow"><span class="dot"></span><span class="t" data-en="The tracks" data-ar="المسارات">The tracks</span></span>
-    <h2 class="t" data-en="Three professional tracks" data-ar="ثلاثة مسارات احترافية">Three professional tracks</h2>
-    <p class="t" data-en="Each track is a full path — from fundamentals to shipping professional work. Take a single course or follow the whole track." data-ar="كل مسار هو رحلة كاملة — من الأساسيات إلى إنتاج عمل احترافي. خذ كورساً واحداً أو اتبع المسار كاملاً.">Each track is a full path — from fundamentals to shipping professional work. Take a single course or follow the whole track.</p>
+    <span class="eyebrow"><span class="dot"></span><span class="t" data-en="The curriculum" data-ar="المنهج">The curriculum</span></span>
+    <h2 class="t" data-en="Five courses. One production pathway." data-ar="خمسة كورسات. مسار إنتاج واحد.">Five courses. One production pathway.</h2>
+    <p class="t" data-en="Take a single course or follow the whole pathway — from studio craft to AI pipelines to the client-facing skills that make it hireable." data-ar="خذ كورساً واحداً أو اتبع المسار كاملاً — من حرفة الاستوديو إلى خطوط إنتاج الذكاء الاصطناعي والمهارات التي تجعلك جاهزاً للتوظيف.">Take a single course or follow the whole pathway — from studio craft to AI pipelines to the client-facing skills that make it hireable.</p>
   </div>
-  <div class="tracks">
+  <div class="curriculum">
 
-    <div class="track-card">
-      <span class="day-tag t" data-en="Track 01" data-ar="المسار ٠١">Track 01</span>
-      <h3 class="t" data-en="Media Production" data-ar="الإنتاج الإعلامي">Media Production</h3>
-      <p class="blurb t" data-en="The visual craft — from camera to final cut. Learn to shoot, edit and finish work that looks broadcast-grade." data-ar="الحرفة البصرية — من الكاميرا إلى المونتاج النهائي. تعلّم كيف تصوّر وتُحرّر وتُنهي عملاً بجودة البث.">The visual craft — from camera to final cut. Learn to shoot, edit and finish work that looks broadcast-grade.</p>
-      <ul>
-        <li class="t" data-en="Cinematography &amp; lighting" data-ar="التصوير السينمائي والإضاءة">Cinematography &amp; lighting</li>
-        <li class="t" data-en="Video editing &amp; post-production" data-ar="المونتاج وما بعد الإنتاج">Video editing &amp; post-production</li>
-        <li class="t" data-en="Directing &amp; on-set craft" data-ar="الإخراج ومهارات موقع التصوير">Directing &amp; on-set craft</li>
-        <li class="t" data-en="Color grading &amp; sound" data-ar="تصحيح الألوان والصوت">Color grading &amp; sound</li>
-      </ul>
-      <div class="for t" data-en="&lt;b&gt;For:&lt;/b&gt; filmmakers, video editors and content teams." data-ar="&lt;b&gt;لمن:&lt;/b&gt; صنّاع الأفلام والمونتيرين وفرق المحتوى."><b>For:</b> filmmakers, video editors and content teams.</div>
-      <a href="file:///C:/Users/Abdullah%20Ghanem/Downloads/podmedia-academy.html#enroll" class="tk-cta t" data-en="Register interest →" data-ar="سجّل اهتمامك ←">Register interest →</a>
+    <div class="curr-item">
+      <span class="curr-num">01</span>
+      <div class="curr-body">
+        <h3 class="t" data-en="Podcast Production" data-ar="إنتاج البودكاست">Podcast Production</h3>
+        <p class="t" data-en="Ideation, scripting, and multi-camera studio recording — direction, mics, lighting, on-site craft." data-ar="التخطيط للفكرة، كتابة السكربت، والتسجيل الاستوديوهي متعدد الكاميرات — الإخراج، الميكروفونات، الإضاءة، ومهارات الموقع.">Ideation, scripting, and multi-camera studio recording — direction, mics, lighting, on-site craft.</p>
+      </div>
     </div>
 
-    <div class="track-card">
-      <span class="day-tag t" data-en="Track 02" data-ar="المسار ٠٢">Track 02</span>
-      <h3 class="t" data-en="Podcast Production" data-ar="إنتاج البودكاست">Podcast Production</h3>
-      <p class="blurb t" data-en="Everything that makes a show worth listening to — built on four working podcast studios across the region." data-ar="كل ما يجعل البرنامج يستحقّ الاستماع — مبنيّ على أربعة استوديوهات بودكاست عاملة في المنطقة.">Everything that makes a show worth listening to — built on four working podcast studios across the region.</p>
-      <ul>
-        <li class="t" data-en="Becoming a better host" data-ar="كيف تصبح مقدّماً أفضل">Becoming a better host</li>
-        <li class="t" data-en="Show structure &amp; storytelling" data-ar="بنية الحلقة وفنّ السرد">Show structure &amp; storytelling</li>
-        <li class="t" data-en="Studio recording craft" data-ar="مهارات التسجيل في الاستوديو">Studio recording craft</li>
-        <li class="t" data-en="Growing &amp; distributing your audience" data-ar="نموّ جمهورك وتوزيع المحتوى">Growing &amp; distributing your audience</li>
-      </ul>
-      <div class="for t" data-en="&lt;b&gt;For:&lt;/b&gt; hosts, creators and brand teams launching a show." data-ar="&lt;b&gt;لمن:&lt;/b&gt; المقدّمون والمبدعون وفرق العلامات التجارية التي تطلق بودكاست."><b>For:</b> hosts, creators and brand teams launching a show.</div>
-      <a href="file:///C:/Users/Abdullah%20Ghanem/Downloads/podmedia-academy.html#enroll" class="tk-cta t" data-en="Register interest →" data-ar="سجّل اهتمامك ←">Register interest →</a>
+    <div class="curr-item">
+      <span class="curr-num">02</span>
+      <div class="curr-body">
+        <h3 class="t" data-en="Podcast Post-Production" data-ar="ما بعد إنتاج البودكاست">Podcast Post-Production</h3>
+        <p class="t" data-en="Mix, master, sync, and broadcast-ready editing — packaged for Spotify, Apple, and YouTube." data-ar="المزج، الماسترينغ، المزامنة، والمونتاج الجاهز للبث — مُجهّز لسبوتيفاي وآبل ويوتيوب.">Mix, master, sync, and broadcast-ready editing — packaged for Spotify, Apple, and YouTube.</p>
+      </div>
     </div>
 
-    <div class="track-card">
-      <span class="day-tag t" data-en="Track 03" data-ar="المسار ٠٣">Track 03</span>
-      <h3 class="t" data-en="AI Video Production" data-ar="إنتاج الفيديو بالذكاء الاصطناعي">AI Video Production</h3>
-      <p class="blurb t" data-en="Turn scattered AI tools into one repeatable, brand-safe pipeline — from a blank prompt to a finished cinematic cut." data-ar="حوّل أدوات الذكاء الاصطناعي المتفرّقة إلى خطّ إنتاج واحد قابل للتكرار وآمن للعلامة — من فكرة فارغة إلى مشهد سينمائي مكتمل.">Turn scattered AI tools into one repeatable, brand-safe pipeline — from a blank prompt to a finished cinematic cut.</p>
-      <ul>
-        <li class="t" data-en="Mastering AI Video Generation 101" data-ar="إتقان توليد الفيديو بالذكاء الاصطناعي 101">Mastering AI Video Generation 101</li>
-        <li class="t" data-en="Strategic pre-visualization" data-ar="التصوّر المرئي الاستراتيجي">Strategic pre-visualization</li>
-        <li class="t" data-en="Video orchestration &amp; motion" data-ar="تنسيق الفيديو والتحريك">Video orchestration &amp; motion</li>
-        <li class="t" data-en="Full-stack AI production" data-ar="الإنتاج المتكامل بالذكاء الاصطناعي">Full-stack AI production</li>
-      </ul>
-      <div class="for t" data-en="&lt;b&gt;For:&lt;/b&gt; media pros folding AI into real pipelines." data-ar="&lt;b&gt;لمن:&lt;/b&gt; محترفو الإعلام الذين يُدمجون الذكاء الاصطناعي في خطوط إنتاج حقيقية."><b>For:</b> media pros folding AI into real pipelines.</div>
-      <a href="https://aiworkshop.podmedia.network/" target="_blank" rel="noopener" class="tk-cta t" data-en="Explore the workshop →" data-ar="استكشف الورشة ←">Explore the workshop →</a>
+    <div class="curr-item">
+      <span class="curr-num">03</span>
+      <div class="curr-body">
+        <h3 class="t" data-en="AI Video Generation 101" data-ar="توليد الفيديو بالذكاء الاصطناعي 101">AI Video Generation 101</h3>
+        <p class="t" data-en="A hands-on foundation in AI video tools, no prior experience required — the same curriculum already live as PodMedia's AI Workshop." data-ar="أساس عملي في أدوات الفيديو بالذكاء الاصطناعي، دون الحاجة لخبرة سابقة — نفس المنهج المعتمد في ورشة بود ميديا للذكاء الاصطناعي.">A hands-on foundation in AI video tools, no prior experience required — the same curriculum already live as PodMedia's AI Workshop.</p>
+      </div>
+    </div>
+
+    <div class="curr-item">
+      <span class="curr-num">04</span>
+      <div class="curr-body">
+        <h3 class="t" data-en="Advanced AI Video Generation" data-ar="توليد الفيديو المتقدّم بالذكاء الاصطناعي">Advanced AI Video Generation</h3>
+        <p class="t" data-en="Persistent AI characters, custom AI worlds, and cinematic upscaling — building brand-safe, production-grade output." data-ar="شخصيات ذكاء اصطناعي ثابتة، عوالم مخصّصة، وتحسين دقة سينمائي — لإنتاج مخرجات آمنة للعلامة وبجودة إنتاجية.">Persistent AI characters, custom AI worlds, and cinematic upscaling — building brand-safe, production-grade output.</p>
+      </div>
+    </div>
+
+    <div class="curr-item">
+      <span class="curr-num">05</span>
+      <div class="curr-body">
+        <h3 class="t" data-en="Media Project Management &amp; Client Communication" data-ar="إدارة المشاريع الإعلامية والتواصل مع العملاء">Media Project Management &amp; Client Communication</h3>
+        <p class="t" data-en="Briefs, timelines, budgets, and client relationships — the practice layer that makes graduates hireable." data-ar="الإحاطات، الجداول الزمنية، الميزانيات، وعلاقات العملاء — الطبقة العملية التي تجعل الخريجين جاهزين للتوظيف.">Briefs, timelines, budgets, and client relationships — the practice layer that makes graduates hireable.</p>
+      </div>
     </div>
 
   </div>
