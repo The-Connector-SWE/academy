@@ -161,7 +161,7 @@ section[id],header[id]{scroll-margin-top:84px}
 .track-card .tk-cta:hover{filter:brightness(1.25)}
 
 /* curriculum */
-.curriculum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.curriculum{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:768px){.curriculum{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.curriculum{grid-template-columns:1fr}}
 .curr-item{display:flex;flex-direction:column;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:22px;padding:28px 26px;backdrop-filter:blur(12px);transition:.3s}
 .curr-item:hover{transform:translateY(-4px);border-color:rgba(255,46,63,.4);box-shadow:0 18px 50px rgba(255,46,63,.14)}
 .curr-num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#fff;box-shadow:0 8px 22px var(--glow);margin-bottom:18px}
